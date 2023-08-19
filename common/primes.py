@@ -1,4 +1,4 @@
-def is_primt(num: int):
+def is_prime(num: int):
     """
     checks if num is prime
     """
@@ -22,3 +22,8 @@ def sieveOfEratosthenes(num: int):
                 prime[i] = False
         p += 1
     return prime
+
+import sympy
+
+def isprime_sympy(n: int) -> bool:
+    return sympy.isprime(n)
