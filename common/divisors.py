@@ -27,3 +27,21 @@ def get_divisors_amount(n: int) -> int:
     for i in divisors:
         amount *= (divisors[i] + 1)
     return amount
+
+import math
+
+def count_distinct_prime_factors(n):
+	count = 0
+	while n > 1:
+		count += 1
+		for i in range(2, int(math.sqrt(n) + 1)):
+			if n % i == 0:
+				while True:
+					n //= i
+					if n % i != 0:
+						break
+				break
+        # n is prime on this else
+		else:
+			break
+	return count
